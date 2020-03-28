@@ -16,3 +16,12 @@ exports['mugshot'].getMugshotUrl(PlayerPedId(), ( url ) => {
     });
 });
 ```
+#### LUA example
+```lua
+exports['mugshot']:getMugshotUrl(PlayerPedId(), function ( url )
+    TriggerEvent('chat:addMessage', {
+        template = '<img src="{0}" style="width: 160px; height: 170px;" />',
+        args = {url}
+    })
+end)
+```
