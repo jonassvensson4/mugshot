@@ -1,5 +1,5 @@
 // Imgur CLIENT ID
-const CLIENT_ID = '';
+const CLIENT_ID = 'yourImgurClientID';
 let callbacks = {};
 
 function getMugshotUrl( ped, cb ) {
