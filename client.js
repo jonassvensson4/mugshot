@@ -30,7 +30,12 @@ function getMugshotUrl( ped, cb ) {
 						'authorization': `Client-ID ${ CLIENT_ID }`,
 						'content-type': 'multipart/form-data'
 					},
-					mugshot: true
+					crop: {
+						offsetX: 0,
+						offsetY: 0,
+						width: 160,
+						height: 180
+					}
 				}, ( data ) => {
 					clearTick(loop);
 					resolve(JSON.parse(data).data.link);
