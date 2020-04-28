@@ -16,6 +16,7 @@ function getMugshotUrl( ped, cb ) {
 	setTimeout(() => {
 		// Assing the texture to a variable, unnecessary to call it twice in the DrawSprite function
 		let txdString = GetPedheadshotTxdString(mugshot);
+		let res = GetActiveScreenResolution();
 
 		const loop = setTick(() => {
 			DrawSprite(txdString, txdString, 0.045, 0.085, 0.10, 0.18, 0.0, 255, 255, 255, 1000);
@@ -33,8 +34,8 @@ function getMugshotUrl( ped, cb ) {
 					crop: {
 						offsetX: 0,
 						offsetY: 0,
-						width: 160,
-						height: 180
+						width  : res[0] / 11,
+                        			height : res[1] / 6
 					}
 				}, ( data ) => {
 					clearTick(loop);
