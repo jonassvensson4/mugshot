@@ -26,7 +26,7 @@ function getMugshotUrl( ped, cb ) {
 		setTimeout(async() => {
 			// Screenshot the screen using screenshot-basic
 			let promise = new Promise(( resolve ) => {
-				exports['screenshot-basic'].requestScreenshotUpload(`https://api.imgur.com/3/upload`, 'imgur', {
+				exports['screenshot-basic'].requestScreenshotUpload(`https://api.imgur.com/3/image`, 'imgur', {
 					headers: {
 						'authorization': `Client-ID ${ CLIENT_ID }`,
 						'content-type': 'multipart/form-data'
@@ -35,7 +35,7 @@ function getMugshotUrl( ped, cb ) {
 						offsetX: 0,
 						offsetY: 0,
 						width  : res[0] / 11,
-                        			height : res[1] / 6
+						height : res[1] / 6
 					}
 				}, ( data ) => {
 					clearTick(loop);
